@@ -3,40 +3,35 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pavel Dikan | DevOps Portfolio</title>
+  <title>Pavel Dikan | Resume 2026</title>
   <style>
     :root {
       --bg: #0b1220;
-      --bg-soft: #121a2b;
-      --card: #182235;
-      --text: #e8eefc;
-      --muted: #aab6d3;
-      --accent: #5aa9ff;
-      --accent-soft: rgba(90, 169, 255, 0.14);
-      --border: rgba(255,255,255,0.08);
-      --shadow: 0 16px 40px rgba(0,0,0,0.28);
-      --max: 1120px;
+      --panel: #111a2e;
+      --panel-2: #16213a;
+      --text: #edf2ff;
+      --muted: #aeb8d4;
+      --accent: #66a8ff;
+      --line: rgba(255,255,255,0.08);
+      --chip: rgba(102,168,255,0.14);
+      --shadow: 0 18px 44px rgba(0,0,0,0.28);
+      --max: 1100px;
     }
 
     * { box-sizing: border-box; }
-
     html { scroll-behavior: smooth; }
-
     body {
       margin: 0;
-      font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
+      font-family: Inter, "Segoe UI", Arial, sans-serif;
       background:
-        radial-gradient(circle at top left, rgba(90,169,255,0.10), transparent 30%),
-        radial-gradient(circle at top right, rgba(120,130,255,0.08), transparent 28%),
+        radial-gradient(circle at top left, rgba(102,168,255,0.12), transparent 28%),
+        radial-gradient(circle at top right, rgba(110,120,255,0.08), transparent 24%),
         var(--bg);
       color: var(--text);
       line-height: 1.6;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+    a { color: inherit; text-decoration: none; }
 
     .container {
       width: min(var(--max), calc(100% - 2rem));
@@ -47,21 +42,21 @@
       position: sticky;
       top: 0;
       z-index: 20;
-      backdrop-filter: blur(12px);
-      background: rgba(11, 18, 32, 0.82);
-      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(10px);
+      background: rgba(11,18,32,0.84);
+      border-bottom: 1px solid var(--line);
     }
 
     .nav-inner {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1rem 0;
       gap: 1rem;
+      padding: 1rem 0;
     }
 
     .brand {
-      font-weight: 700;
+      font-weight: 800;
       letter-spacing: 0.3px;
     }
 
@@ -73,165 +68,137 @@
       font-size: 0.95rem;
     }
 
-    .nav-links a:hover,
-    .nav-links a:focus-visible {
-      color: var(--text);
-    }
+    .nav-links a:hover { color: var(--text); }
 
     .hero {
-      padding: 5rem 0 3rem;
+      padding: 4.5rem 0 2rem;
     }
 
-    .hero-grid {
+    .hero-card, .card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card {
+      padding: 1.5rem;
+    }
+
+    .hero-top {
       display: grid;
-      grid-template-columns: 1.4fr 0.9fr;
-      gap: 2rem;
-      align-items: center;
+      grid-template-columns: 1.5fr 0.9fr;
+      gap: 1.2rem;
+      align-items: start;
     }
 
     .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
+      display: inline-block;
       padding: 0.45rem 0.8rem;
-      border: 1px solid var(--border);
       border-radius: 999px;
+      border: 1px solid var(--line);
       color: var(--muted);
       background: rgba(255,255,255,0.03);
-      font-size: 0.92rem;
       margin-bottom: 1rem;
+      font-size: 0.92rem;
     }
 
     h1 {
-      margin: 0 0 1rem;
-      font-size: clamp(2.4rem, 5vw, 4.6rem);
+      margin: 0 0 0.85rem;
+      font-size: clamp(2.3rem, 5vw, 4.2rem);
       line-height: 1.05;
       letter-spacing: -0.03em;
     }
 
     .lead {
-      font-size: 1.08rem;
+      margin: 0 0 1.3rem;
       color: var(--muted);
+      font-size: 1.05rem;
       max-width: 720px;
-      margin-bottom: 1.5rem;
     }
 
-    .hero-actions {
+    .actions {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.9rem;
-      margin-bottom: 1.5rem;
+      gap: 0.85rem;
+      margin-bottom: 1rem;
     }
 
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 0.55rem;
-      padding: 0.9rem 1.2rem;
+      padding: 0.9rem 1.15rem;
       border-radius: 14px;
-      border: 1px solid var(--border);
-      background: var(--card);
+      font-weight: 700;
+      border: 1px solid var(--line);
+      background: var(--panel-2);
       color: var(--text);
-      box-shadow: var(--shadow);
-      transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease;
-      font-weight: 600;
+      transition: transform 0.18s ease;
     }
 
-    .btn:hover,
-    .btn:focus-visible {
-      transform: translateY(-2px);
-      border-color: rgba(90,169,255,0.45);
-    }
+    .btn:hover { transform: translateY(-2px); }
 
     .btn.primary {
-      background: linear-gradient(135deg, var(--accent), #7a8cff);
-      color: white;
+      background: linear-gradient(135deg, var(--accent), #7f88ff);
       border: none;
+      color: white;
     }
 
-    .quick-info {
+    .chips {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.75rem;
-      color: var(--muted);
-      font-size: 0.95rem;
+      gap: 0.7rem;
     }
 
     .chip {
-      padding: 0.55rem 0.85rem;
+      padding: 0.5rem 0.8rem;
       border-radius: 999px;
       background: rgba(255,255,255,0.04);
-      border: 1px solid var(--border);
+      border: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.92rem;
     }
 
-    .hero-card,
-    .card {
-      background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
-      border: 1px solid var(--border);
-      border-radius: 24px;
-      box-shadow: var(--shadow);
-    }
-
-    .hero-card {
-      padding: 1.4rem;
-    }
-
-    .profile-box {
+    .summary-box {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 1.1rem;
       display: grid;
-      gap: 1rem;
+      gap: 0.8rem;
     }
 
     .avatar {
-      width: 92px;
-      height: 92px;
-      border-radius: 22px;
-      background: linear-gradient(135deg, rgba(90,169,255,0.35), rgba(122,140,255,0.18));
+      width: 84px;
+      height: 84px;
+      border-radius: 20px;
       display: grid;
       place-items: center;
-      font-size: 1.9rem;
       font-weight: 800;
-      color: white;
-      border: 1px solid rgba(255,255,255,0.1);
-    }
-
-    .profile-title {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-    }
-
-    .profile-title h2 {
-      margin: 0;
-      font-size: 1.2rem;
+      font-size: 1.7rem;
+      background: linear-gradient(135deg, rgba(102,168,255,0.35), rgba(127,136,255,0.18));
+      border: 1px solid var(--line);
     }
 
     .muted { color: var(--muted); }
 
     .section {
-      padding: 1.3rem 0 1.2rem;
+      padding: 1rem 0;
     }
 
     .section-header {
-      margin-bottom: 1.2rem;
+      margin-bottom: 1rem;
     }
 
     .section-header h2 {
-      margin: 0 0 0.4rem;
-      font-size: 1.8rem;
+      margin: 0 0 0.35rem;
+      font-size: 1.65rem;
     }
 
     .section-header p {
       margin: 0;
       color: var(--muted);
-      max-width: 780px;
-    }
-
-    .grid-3 {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1rem;
     }
 
     .grid-2 {
@@ -240,120 +207,14 @@
       gap: 1rem;
     }
 
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+
     .card {
       padding: 1.2rem;
-    }
-
-    .skill-group h3,
-    .project-card h3,
-    .timeline-card h3 {
-      margin-top: 0;
-      margin-bottom: 0.75rem;
-      font-size: 1.05rem;
-    }
-
-    .tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.55rem;
-    }
-
-    .tag {
-      padding: 0.45rem 0.72rem;
-      border-radius: 999px;
-      background: var(--accent-soft);
-      border: 1px solid rgba(90,169,255,0.15);
-      color: #dce9ff;
-      font-size: 0.9rem;
-    }
-
-    .timeline {
-      display: grid;
-      gap: 1rem;
-    }
-
-    .timeline-card {
-      display: grid;
-      gap: 0.9rem;
-    }
-
-    .org {
-      display: flex;
-      gap: 1rem;
-      align-items: flex-start;
-    }
-
-    .logo {
-      min-width: 56px;
-      width: 56px;
-      height: 56px;
-      border-radius: 16px;
-      display: grid;
-      place-items: center;
-      font-weight: 800;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid var(--border);
-      color: var(--text);
-    }
-
-    .org-meta h3,
-    .org-meta h4 {
-      margin: 0;
-    }
-
-    .org-meta h4 {
-      font-size: 1rem;
-      color: var(--muted);
-      font-weight: 500;
-      margin-top: 0.2rem;
-    }
-
-    ul.clean {
-      margin: 0.2rem 0 0;
-      padding-left: 1.1rem;
-      color: var(--muted);
-    }
-
-    .project-card {
-      display: flex;
-      flex-direction: column;
-      gap: 0.9rem;
-      min-height: 100%;
-    }
-
-    .project-top {
-      display: flex;
-      justify-content: space-between;
-      gap: 0.8rem;
-      align-items: flex-start;
-    }
-
-    .pill {
-      padding: 0.38rem 0.65rem;
-      border-radius: 999px;
-      font-size: 0.78rem;
-      color: #d9e8ff;
-      background: rgba(122,140,255,0.14);
-      border: 1px solid rgba(122,140,255,0.18);
-      white-space: nowrap;
-    }
-
-    .project-links {
-      display: flex;
-      gap: 0.75rem;
-      flex-wrap: wrap;
-      margin-top: auto;
-    }
-
-    .project-links a {
-      color: #dce9ff;
-      font-weight: 600;
-    }
-
-    .contact-list {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1rem;
     }
 
     .contact-item {
@@ -366,12 +227,56 @@
       width: 44px;
       height: 44px;
       border-radius: 14px;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid var(--border);
       display: grid;
       place-items: center;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--line);
       color: var(--accent);
       font-weight: 800;
+      flex-shrink: 0;
+    }
+
+    .stack {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .entry {
+      display: grid;
+      gap: 0.8rem;
+      border-left: 2px solid rgba(102,168,255,0.35);
+      padding-left: 1rem;
+    }
+
+    .entry h3 {
+      margin: 0;
+      font-size: 1.06rem;
+    }
+
+    .entry .meta {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    ul.clean {
+      margin: 0;
+      padding-left: 1.1rem;
+      color: var(--muted);
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+    }
+
+    .tag {
+      background: var(--chip);
+      border: 1px solid rgba(102,168,255,0.15);
+      color: #dfeaff;
+      padding: 0.45rem 0.72rem;
+      border-radius: 999px;
+      font-size: 0.9rem;
     }
 
     footer {
@@ -381,13 +286,9 @@
     }
 
     @media (max-width: 960px) {
-      .hero-grid,
-      .grid-3,
-      .grid-2,
-      .contact-list {
+      .hero-top, .grid-2, .grid-3 {
         grid-template-columns: 1fr;
       }
-
       .nav-inner {
         flex-direction: column;
         align-items: flex-start;
@@ -395,22 +296,9 @@
     }
 
     @media (max-width: 640px) {
-      .hero {
-        padding-top: 3.3rem;
-      }
-
-      h1 {
-        font-size: 2.35rem;
-      }
-
-      .container {
-        width: min(var(--max), calc(100% - 1rem));
-      }
-
-      .hero-card,
-      .card {
-        border-radius: 20px;
-      }
+      .container { width: min(var(--max), calc(100% - 1rem)); }
+      .hero { padding-top: 3.2rem; }
+      h1 { font-size: 2.25rem; }
     }
   </style>
 </head>
@@ -419,129 +307,88 @@
     <div class="container nav-inner">
       <div class="brand">Pavel Dikan</div>
       <div class="nav-links">
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
         <a href="#experience">Experience</a>
         <a href="#education">Education</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
+        <a href="#languages">Languages</a>
+        <a href="#skills">Skills</a>
       </div>
     </div>
   </nav>
 
   <header class="hero">
-    <div class="container hero-grid">
-      <div>
-        <div class="eyebrow">DevOps • Linux • Cloud • GitOps</div>
-        <h1>Building reliable infrastructure and practical IT solutions.</h1>
-        <p class="lead">
-          I am a student in Informatics in Prague with hands-on experience in Linux administration,
-          cloud infrastructure monitoring, automation, and modern DevOps tooling. I am especially interested in
-          GitOps, Kubernetes, infrastructure engineering, and practical portfolio projects that connect IT with business value.
-        </p>
-        <div class="hero-actions">
-          <a class="btn primary" href="#projects">View Projects</a>
-          <a class="btn" href="./Pavel-Dikan-CV.pdf">Download CV</a>
-          <a class="btn" href="https://github.com/JinTonikCZ" target="_blank" rel="noreferrer">GitHub</a>
-        </div>
-        <div class="quick-info">
-          <div class="chip">Prague, Czech Republic</div>
-          <div class="chip">Open to IT / DevOps opportunities</div>
+    <div class="container">
+      <div class="hero-card">
+        <div class="hero-top">
+          <div>
+            <div class="eyebrow">Resume / Portfolio</div>
+            <h1>Pavel Dikan</h1>
+            <p class="lead">
+              DevOps- and infrastructure-oriented IT specialist with hands-on experience in Linux administration,
+              cloud tooling, monitoring, automation, and practical technical support. Currently studying Informatics in Prague
+              and building portfolio projects in Git, Docker, Kubernetes, dashboards, and documentation.
+            </p>
+            <div class="actions">
+              <a class="btn primary" href="./Pavel-Dikan-CV.pdf">Download CV</a>
+              <a class="btn" href="https://github.com/JinTonikCZ" target="_blank" rel="noreferrer">GitHub</a>
+              <a class="btn" href="https://t.me/programatorr" target="_blank" rel="noreferrer">Telegram</a>
+            </div>
+            <div class="chips">
+              <span class="chip">Prague, Czech Republic</span>
+              <span class="chip">Work permit: Czech Republic</span>
+              <span class="chip">Open to junior IT / DevOps roles</span>
+            </div>
+          </div>
+          <div class="summary-box">
+            <div class="avatar">PD</div>
+            <div>
+              <strong>Current focus</strong>
+              <div class="muted">Linux, DevOps, Git, Docker, Kubernetes, dashboards, and practical infrastructure work.</div>
+            </div>
+            <div>
+              <strong>Education status</strong>
+              <div class="muted">Master’s studies in Informatics in progress, not yet completed.</div>
+            </div>
+          </div>
         </div>
       </div>
-
-      <aside class="hero-card">
-        <div class="profile-box">
-          <div class="avatar">PD</div>
-          <div class="profile-title">
-            <div>
-              <h2>Pavel Dikan</h2>
-              <div class="muted">Junior DevOps / Linux / Cloud Engineer</div>
-            </div>
-            <span class="pill">Portfolio</span>
-          </div>
-          <div class="muted">
-            Focused on Linux systems, automation, Git workflows, Docker, Kubernetes, monitoring,
-            and project documentation that is clear, structured, and useful for real teams.
-          </div>
-        </div>
-      </aside>
     </div>
   </header>
 
   <main>
-    <section class="section" id="about">
+    <section class="section" id="contact">
       <div class="container">
         <div class="section-header">
-          <h2>About Me</h2>
-          <p>
-            I combine technical infrastructure interests with analytical thinking and structured project work.
-            Alongside DevOps and Linux administration, I also work on academic and portfolio projects related to GitOps,
-            dashboards, automation, and practical software development.
-          </p>
+          <h2>Contact</h2>
+          <p>Main contact information and links.</p>
         </div>
         <div class="grid-2">
-          <div class="card">
-            <h3>What I focus on</h3>
-            <ul class="clean">
-              <li>Linux administration and troubleshooting</li>
-              <li>Cloud and virtual infrastructure</li>
-              <li>Git, GitHub, and repository documentation</li>
-              <li>Docker, Kubernetes, and GitOps concepts</li>
-              <li>Monitoring, automation, and deployment workflows</li>
-            </ul>
-          </div>
-          <div class="card">
-            <h3>What I am looking for</h3>
-            <ul class="clean">
-              <li>Junior DevOps, Linux, Cloud, or Infrastructure roles</li>
-              <li>Projects where I can grow through practical engineering tasks</li>
-              <li>Opportunities in Prague or remote-friendly environments</li>
-              <li>Teams that value curiosity, ownership, and continuous learning</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="skills">
-      <div class="container">
-        <div class="section-header">
-          <h2>Skills</h2>
-          <p>Core technologies and tools I use across infrastructure, automation, and analytical projects.</p>
-        </div>
-        <div class="grid-3">
-          <div class="card skill-group">
-            <h3>DevOps & Cloud</h3>
-            <div class="tags">
-              <span class="tag">Docker</span>
-              <span class="tag">Kubernetes</span>
-              <span class="tag">OpenStack</span>
-              <span class="tag">GitOps</span>
-              <span class="tag">CI/CD</span>
-              <span class="tag">Monitoring</span>
+          <div class="card contact-item">
+            <div class="icon">@</div>
+            <div>
+              <strong>Email</strong><br>
+              <a class="muted" href="mailto:subxv1@gmail.com">subxv1@gmail.com</a>
             </div>
           </div>
-          <div class="card skill-group">
-            <h3>Systems & Automation</h3>
-            <div class="tags">
-              <span class="tag">Linux</span>
-              <span class="tag">Bash</span>
-              <span class="tag">Ansible</span>
-              <span class="tag">Puppet</span>
-              <span class="tag">Jenkins</span>
-              <span class="tag">GitLab</span>
+          <div class="card contact-item">
+            <div class="icon">PH</div>
+            <div>
+              <strong>Phone</strong><br>
+              <span class="muted">(+420) 608 820 635</span>
             </div>
           </div>
-          <div class="card skill-group">
-            <h3>Development & Analytics</h3>
-            <div class="tags">
-              <span class="tag">Git / GitHub</span>
-              <span class="tag">Java</span>
-              <span class="tag">PHP</span>
-              <span class="tag">Power BI</span>
-              <span class="tag">SPSS Modeler</span>
-              <span class="tag">SQL Basics</span>
+          <div class="card contact-item">
+            <div class="icon">GH</div>
+            <div>
+              <strong>GitHub</strong><br>
+              <a class="muted" href="https://github.com/JinTonikCZ" target="_blank" rel="noreferrer">github.com/JinTonikCZ</a>
+            </div>
+          </div>
+          <div class="card contact-item">
+            <div class="icon">TG</div>
+            <div>
+              <strong>Telegram</strong><br>
+              <a class="muted" href="https://t.me/programatorr" target="_blank" rel="noreferrer">@programatorr</a>
             </div>
           </div>
         </div>
@@ -551,23 +398,48 @@
     <section class="section" id="experience">
       <div class="container">
         <div class="section-header">
-          <h2>Experience</h2>
-          <p>Professional experience and hands-on technical work relevant to Linux, infrastructure, and DevOps.</p>
+          <h2>Work Experience</h2>
+          <p>Based on the structure of your CV.</p>
         </div>
-        <div class="timeline">
-          <div class="card timeline-card">
-            <div class="org">
-              <div class="logo">CI</div>
-              <div class="org-meta">
-                <h3>Junior Linux Administrator</h3>
-                <h4>Cloudinfrastack • Prague • 11/2024 – 02/2025</h4>
-              </div>
+        <div class="card stack">
+          <div class="entry">
+            <div>
+              <h3>Junior Linux Admin</h3>
+              <div class="meta">Cloudinfrastack • Prague, Czech Republic • 11/2024 – 02/2025</div>
             </div>
             <ul class="clean">
-              <li>Worked with Ubuntu 22/24 servers and Linux-based infrastructure tasks.</li>
-              <li>Used OpenStack and related tools in cloud and virtualized environments.</li>
-              <li>Worked with monitoring tools and infrastructure visibility solutions.</li>
-              <li>Gained exposure to Puppet, Ansible, Docker, Kubernetes, Jenkins, GitLab, Heat, Foreman, and Consul.</li>
+              <li>Linux Ubuntu administration (v22, v24).</li>
+              <li>OpenStack cloud software administration.</li>
+              <li>Monitoring of cloud infrastructure with Sensu Uchiwa.</li>
+              <li>Automation with Puppet and Ansible.</li>
+              <li>Work with Docker, Kubernetes, Jenkins, GitLab, Heat, Foreman, and Consul.</li>
+            </ul>
+          </div>
+
+          <div class="entry">
+            <div>
+              <h3>Software Engineer</h3>
+              <div class="meta">Yugra-ASU • Nizhnevartovsk, Russia • 11/2020 – 09/2021</div>
+            </div>
+            <ul class="clean">
+              <li>Maintenance and programming of industrial control units and PLC systems.</li>
+              <li>Administration of enterprise IT infrastructure in Windows and Astra Linux.</li>
+              <li>Microsoft SQL Server database administration.</li>
+              <li>Repair and support of telecommunication networks: ADSL, FTTB, GPON.</li>
+            </ul>
+          </div>
+
+          <div class="entry">
+            <div>
+              <h3>Network Technician</h3>
+              <div class="meta">NVGU Nizhnevartovsk State University • Nizhnevartovsk, Russia • 08/2019 – 11/2020</div>
+            </div>
+            <ul class="clean">
+              <li>Maintenance of the university computer network.</li>
+              <li>Support of practical classes for telecommunication equipment repair.</li>
+              <li>Work with virtual machines in VirtualBox.</li>
+              <li>User security policies in Active Directory.</li>
+              <li>PC replacement, repair, and operating system cloning.</li>
             </ul>
           </div>
         </div>
@@ -577,153 +449,101 @@
     <section class="section" id="education">
       <div class="container">
         <div class="section-header">
-          <h2>Education</h2>
-          <p>Academic background with a focus on informatics, modern tooling, and practical technical projects.</p>
+          <h2>Education and Training</h2>
+          <p>Education rewritten to reflect current status correctly.</p>
         </div>
-        <div class="timeline">
-          <div class="card timeline-card">
-            <div class="org">
-              <div class="logo">ČZU</div>
-              <div class="org-meta">
-  
-                <h4>Czech University of Life Sciences Prague • 2024 – 2026</h4>
-              </div>
+        <div class="card stack">
+          <div class="entry">
+            <div>
+              <h3>Informatics</h3>
+              <div class="meta">Czech University of Life Sciences Prague (ČZU) • Prague, Czech Republic • 10/2024 – 06/2026</div>
             </div>
             <ul class="clean">
-              <li>Current focus includes DevOps, GitOps, cloud-native tooling, analytics, and project documentation.</li>
-              <li>Working on technical and analytical portfolio projects connected to infrastructure and business use cases.</li>
+              <li>Master’s studies in progress.</li>
+              <li>This degree is not completed yet.</li>
+              <li>Current focus: ArgoCD, Kubernetes, Git, Power BI, IBM SPSS Modeler, NotebookLM.</li>
+            </ul>
+          </div>
+
+          <div class="entry">
+            <div>
+              <h3>Bachelor’s Degree in Software Engineering and Technology</h3>
+              <div class="meta">NVGU Nizhnevartovsk State University • Nizhnevartovsk, Russia • 09/2016 – 07/2020</div>
+            </div>
+            <ul class="clean">
+              <li>Programming in Java, PHP, Linux, Python, and work with VirtualBox.</li>
+              <li>Final thesis: website for the cosmetic studio “Zlat-Art”.</li>
+            </ul>
+          </div>
+
+          <div class="entry">
+            <div>
+              <h3>Technician–Programmer</h3>
+              <div class="meta">Nizhnevartovsk Social and Humanitarian College • Nizhnevartovsk, Russia • 11/2011 – 06/2015</div>
+            </div>
+            <ul class="clean">
+              <li>Information applications in .NET using C#.</li>
             </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="projects">
+    <section class="section" id="languages">
       <div class="container">
         <div class="section-header">
-          <h2>Projects</h2>
-          <p>Selected academic, portfolio, and practical projects that show both technical and analytical thinking.</p>
+          <h2>Languages</h2>
+          <p>Language levels based on the current CV.</p>
         </div>
-        <div class="grid-2">
-          <article class="card project-card">
-            <div class="project-top">
-              <h3>GitOps Master’s Thesis</h3>
-              <span class="pill">Thesis</span>
-            </div>
-            <p class="muted">
-              A research and implementation-focused thesis on GitOps for cloud infrastructure management,
-              covering workflows, tooling, repository structure, and practical deployment concepts.
-            </p>
-            <div class="tags">
-              <span class="tag">GitOps</span>
-              <span class="tag">Kubernetes</span>
-              <span class="tag">ArgoCD</span>
-              <span class="tag">Documentation</span>
-            </div>
-            <div class="project-links">
-              <a href="https://github.com/JinTonikCZ" target="_blank" rel="noreferrer">View on GitHub</a>
-            </div>
-          </article>
-
-          <article class="card project-card">
-            <div class="project-top">
-              <h3>AŽD Financial Analysis Dashboard</h3>
-              <span class="pill">Case Study</span>
-            </div>
-            <p class="muted">
-              A management-oriented dashboard project focused on revenue and cost development,
-              plan vs. actual comparison, profitability indicators, and variance analysis.
-            </p>
-            <div class="tags">
-              <span class="tag">Excel / BI</span>
-              <span class="tag">Dashboard</span>
-              <span class="tag">Finance</span>
-              <span class="tag">Reporting</span>
-            </div>
-            <div class="project-links">
-              <a href="https://github.com/JinTonikCZ/azd-financial-analysis-dashboard" target="_blank" rel="noreferrer">View project</a>
-            </div>
-          </article>
-
-          <article class="card project-card">
-            <div class="project-top">
-              <h3>Web Development Projects</h3>
-              <span class="pill">Development</span>
-            </div>
-            <p class="muted">
-              Smaller web projects using PHP, Bootstrap, and basic backend logic with a focus on practical functionality,
-              forms, and project structure.
-            </p>
-            <div class="tags">
-              <span class="tag">PHP</span>
-              <span class="tag">Bootstrap</span>
-              <span class="tag">Forms</span>
-              <span class="tag">UX Basics</span>
-            </div>
-            <div class="project-links">
-              <a href="https://github.com/JinTonikCZ" target="_blank" rel="noreferrer">More projects</a>
-            </div>
-          </article>
-
-          <article class="card project-card">
-            <div class="project-top">
-              <h3>Infrastructure & Lab Work</h3>
-              <span class="pill">Practice</span>
-            </div>
-            <p class="muted">
-              Hands-on labs and experiments with Linux environments, repositories, containers, monitoring,
-              and infrastructure tooling for skill growth and portfolio development.
-            </p>
-            <div class="tags">
-              <span class="tag">Linux</span>
-              <span class="tag">VMs</span>
-              <span class="tag">Docker</span>
-              <span class="tag">Monitoring</span>
-            </div>
-            <div class="project-links">
-              <a href="https://github.com/JinTonikCZ" target="_blank" rel="noreferrer">GitHub profile</a>
-            </div>
-          </article>
+        <div class="grid-3">
+          <div class="card">
+            <h3>Russian</h3>
+            <div class="muted">Native language</div>
+          </div>
+          <div class="card">
+            <h3>Czech</h3>
+            <div class="muted">B2</div>
+          </div>
+          <div class="card">
+            <h3>English</h3>
+            <div class="muted">B1</div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="contact">
+    <section class="section" id="skills">
       <div class="container">
         <div class="section-header">
-          <h2>Contact</h2>
-          <p>Feel free to reach out regarding DevOps, Linux, cloud, or junior infrastructure opportunities.</p>
+          <h2>Skills</h2>
+          <p>Main technical areas from the resume.</p>
         </div>
-        <div class="card">
-          <div class="contact-list">
-            <div class="contact-item">
-              <div class="icon">@</div>
-              <div>
-                <strong>Email</strong><br />
-                <a class="muted" href="mailto:subxv1@gmail.com">subxv1@gmail.com</a>
-              </div>
+        <div class="grid-2">
+          <div class="card">
+            <h3>Technical Skills</h3>
+            <div class="tags">
+              <span class="tag">DevOps</span>
+              <span class="tag">ArgoCD</span>
+              <span class="tag">Kubernetes</span>
+              <span class="tag">Git</span>
+              <span class="tag">Linux Bash/Shell</span>
+              <span class="tag">Docker</span>
+              <span class="tag">PHP</span>
+              <span class="tag">Power BI</span>
+              <span class="tag">IBM SPSS Modeler</span>
+              <span class="tag">Active Directory</span>
+              <span class="tag">VirtualBox</span>
+              <span class="tag">ADSL / FTTB / GPON</span>
             </div>
-            <div class="contact-item">
-              <div class="icon">GH</div>
-              <div>
-                <strong>GitHub</strong><br />
-                <a class="muted" href="https://github.com/JinTonikCZ" target="_blank" rel="noreferrer">github.com/JinTonikCZ</a>
-              </div>
-            </div>
-            <div class="contact-item">
-              <div class="icon">TG</div>
-              <div>
-                <strong>Telegram</strong><br />
-                <a class="muted" href="https://t.me/programatorr" target="_blank" rel="noreferrer">@programatorr</a>
-              </div>
-            </div>
-            <div class="contact-item">
-              <div class="icon">CZ</div>
-              <div>
-                <strong>Location</strong><br />
-                <span class="muted">Prague, Czech Republic</span>
-              </div>
-            </div>
+          </div>
+          <div class="card">
+            <h3>Additional Information</h3>
+            <ul class="clean">
+              <li>Ability to design computer networks.</li>
+              <li>Practical work with Git and GitHub.</li>
+              <li>Interest in infrastructure, monitoring, and cloud tooling.</li>
+              <li>Driving licence: category B.</li>
+            </ul>
           </div>
         </div>
       </div>
@@ -731,9 +551,7 @@
   </main>
 
   <footer>
-    <div class="container">
-      © 2026 Pavel Dikan. Built as a GitHub Pages portfolio site.
-    </div>
+    <div class="container">© 2026 Pavel Dikan. Resume-based GitHub Pages site.</div>
   </footer>
 </body>
 </html>
