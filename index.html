@@ -1,353 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Basic page setup -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Page title shown in browser tab -->
   <title>Pavel Dikan | Resume 2026</title>
-  <style>
-    :root {
-      --bg: #0b1220;
-      --panel: #111a2e;
-      --panel-2: #16213a;
-      --text: #edf2ff;
-      --muted: #aeb8d4;
-      --accent: #66a8ff;
-      --line: rgba(255,255,255,0.08);
-      --chip: rgba(102,168,255,0.14);
-      --shadow: 0 18px 44px rgba(0,0,0,0.28);
-      --max: 1100px;
-    }
 
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      font-family: Inter, "Segoe UI", Arial, sans-serif;
-      background:
-        radial-gradient(circle at top left, rgba(102,168,255,0.12), transparent 28%),
-        radial-gradient(circle at top right, rgba(110,120,255,0.08), transparent 24%),
-        var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-    }
-
-    a { color: inherit; text-decoration: none; }
-
-    .container {
-      width: min(var(--max), calc(100% - 2rem));
-      margin: 0 auto;
-    }
-
-    .nav {
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      backdrop-filter: blur(10px);
-      background: rgba(11,18,32,0.84);
-      border-bottom: 1px solid var(--line);
-    }
-
-    .nav-inner {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 1rem;
-      padding: 1rem 0;
-    }
-
-    .brand {
-      font-weight: 800;
-      letter-spacing: 0.3px;
-    }
-
-    .nav-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
-    .nav-links a:hover { color: var(--text); }
-
-    .hero {
-      padding: 4.5rem 0 2rem;
-    }
-
-    .hero-card, .card {
-      background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
-      border: 1px solid var(--line);
-      border-radius: 24px;
-      box-shadow: var(--shadow);
-    }
-
-    .hero-card {
-      padding: 1.5rem;
-    }
-
-    .hero-top {
-      display: grid;
-      grid-template-columns: 1.5fr 0.9fr;
-      gap: 1.2rem;
-      align-items: start;
-    }
-
-    .eyebrow {
-      display: inline-block;
-      padding: 0.45rem 0.8rem;
-      border-radius: 999px;
-      border: 1px solid var(--line);
-      color: var(--muted);
-      background: rgba(255,255,255,0.03);
-      margin-bottom: 1rem;
-      font-size: 0.92rem;
-    }
-
-    h1 {
-      margin: 0 0 0.85rem;
-      font-size: clamp(2.3rem, 5vw, 4.2rem);
-      line-height: 1.05;
-      letter-spacing: -0.03em;
-    }
-
-    .lead {
-      margin: 0 0 1.3rem;
-      color: var(--muted);
-      font-size: 1.05rem;
-      max-width: 720px;
-    }
-
-    .actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.85rem;
-      margin-bottom: 1rem;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0.9rem 1.15rem;
-      border-radius: 14px;
-      font-weight: 700;
-      border: 1px solid var(--line);
-      background: var(--panel-2);
-      color: var(--text);
-      transition: transform 0.18s ease;
-    }
-
-    .btn:hover { transform: translateY(-2px); }
-
-    .btn.primary {
-      background: linear-gradient(135deg, var(--accent), #7f88ff);
-      border: none;
-      color: white;
-    }
-
-    .chips {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.7rem;
-    }
-
-    .chip {
-      padding: 0.5rem 0.8rem;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid var(--line);
-      color: var(--muted);
-      font-size: 0.92rem;
-    }
-
-    .summary-box {
-      background: rgba(255,255,255,0.03);
-      border: 1px solid var(--line);
-      border-radius: 20px;
-      padding: 1.1rem;
-      display: grid;
-      gap: 0.8rem;
-    }
-
-    .avatar {
-      width: 84px;
-      height: 84px;
-      border-radius: 20px;
-      display: grid;
-      place-items: center;
-      font-weight: 800;
-      font-size: 1.7rem;
-      background: linear-gradient(135deg, rgba(102,168,255,0.35), rgba(127,136,255,0.18));
-      border: 1px solid var(--line);
-    }
-
-    .muted { color: var(--muted); }
-
-    .section {
-      padding: 1rem 0;
-    }
-
-    .section-header {
-      margin-bottom: 1rem;
-    }
-
-    .section-header h2 {
-      margin: 0 0 0.35rem;
-      font-size: 1.65rem;
-    }
-
-    .section-header p {
-      margin: 0;
-      color: var(--muted);
-    }
-
-    .grid-2 {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1rem;
-    }
-
-    .grid-3 {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1rem;
-    }
-
-    .card {
-      padding: 1.2rem;
-    }
-
-    .contact-item {
-      display: flex;
-      gap: 0.85rem;
-      align-items: center;
-    }
-
-    .icon {
-      width: 44px;
-      height: 44px;
-      border-radius: 14px;
-      display: grid;
-      place-items: center;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid var(--line);
-      color: var(--accent);
-      font-weight: 800;
-      flex-shrink: 0;
-    }
-
-    .stack {
-      display: grid;
-      gap: 1rem;
-    }
-
-    .entry {
-      display: grid;
-      gap: 0.8rem;
-      border-left: 2px solid rgba(102,168,255,0.35);
-      padding-left: 1rem;
-    }
-
-    .entry h3 {
-      margin: 0;
-      font-size: 1.06rem;
-    }
-
-    .entry .meta {
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
-    ul.clean {
-      margin: 0;
-      padding-left: 1.1rem;
-      color: var(--muted);
-    }
-
-    .tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.55rem;
-    }
-
-    .tag {
-      background: var(--chip);
-      border: 1px solid rgba(102,168,255,0.15);
-      color: #dfeaff;
-      padding: 0.45rem 0.72rem;
-      border-radius: 999px;
-      font-size: 0.9rem;
-    }
-
-    footer {
-      padding: 2.8rem 0 3.5rem;
-      color: var(--muted);
-      font-size: 0.94rem;
-    }
-
-    @media (max-width: 960px) {
-      .hero-top, .grid-2, .grid-3 {
-        grid-template-columns: 1fr;
-      }
-      .nav-inner {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-    }
-
-    @media (max-width: 640px) {
-      .container { width: min(var(--max), calc(100% - 1rem)); }
-      .hero { padding-top: 3.2rem; }
-      h1 { font-size: 2.25rem; }
-    }
-  </style>
+  <!-- External stylesheet -->
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <!-- =========================
+       TOP NAVIGATION
+  ========================== -->
   <nav class="nav">
     <div class="container nav-inner">
       <div class="brand">Pavel Dikan</div>
+
       <div class="nav-links">
         <a href="#contact">Contact</a>
         <a href="#experience">Experience</a>
         <a href="#education">Education</a>
+        <a href="#projects">Projects</a>
         <a href="#languages">Languages</a>
         <a href="#skills">Skills</a>
       </div>
     </div>
   </nav>
 
+  <!-- =========================
+       HERO SECTION
+  ========================== -->
   <header class="hero">
     <div class="container">
       <div class="hero-card">
         <div class="hero-top">
+          <!-- Left side: main introduction -->
           <div>
             <div class="eyebrow">Resume / Portfolio</div>
+
             <h1>Pavel Dikan</h1>
+
             <p class="lead">
-              DevOps- and infrastructure-oriented IT specialist with hands-on experience in Linux administration,
-              cloud tooling, monitoring, automation, and practical technical support. Currently studying Informatics in Prague
-              and building portfolio projects in Git, Docker, Kubernetes, dashboards, and documentation.
+              DevOps- and infrastructure-oriented IT specialist with hands-on experience
+              in Linux administration, cloud tooling, monitoring, automation, and practical
+              technical support. Currently studying Informatics in Prague and building
+              portfolio projects in Git, Docker, Kubernetes, dashboards, and documentation.
             </p>
+
+            <!-- Main action buttons -->
             <div class="actions">
-              <a class="btn primary" href="./Pavel-Dikan-CV.pdf">Download CV</a>
+              <a class="btn primary" href="./Pavel-Dikan-CV.pdf" target="_blank">Download CV</a>
               <a class="btn" href="https://github.com/JinTonikCZ" target="_blank" rel="noreferrer">GitHub</a>
+              <a class="btn" href="https://www.linkedin.com/in/pavel-dikan-7a7b94344/" target="_blank" rel="noreferrer">LinkedIn</a>
               <a class="btn" href="https://t.me/programatorr" target="_blank" rel="noreferrer">Telegram</a>
             </div>
+
+            <!-- Small info chips -->
             <div class="chips">
               <span class="chip">Prague, Czech Republic</span>
-              <span class="chip">Work permit: Czech Republic</span>
               <span class="chip">Open to junior IT / DevOps roles</span>
+              <span class="chip">Master’s studies in progress</span>
             </div>
           </div>
+
+          <!-- Right side: summary and live info -->
           <div class="summary-box">
             <div class="avatar">PD</div>
+
             <div>
               <strong>Current focus</strong>
-              <div class="muted">Linux, DevOps, Git, Docker, Kubernetes, dashboards, and practical infrastructure work.</div>
+              <div class="muted">
+                Linux, DevOps, Git, Docker, Kubernetes, dashboards, and practical infrastructure work.
+              </div>
             </div>
+
             <div>
               <strong>Education status</strong>
-              <div class="muted">Master’s studies in Informatics in progress, not yet completed.</div>
+              <div class="muted">
+                Master’s studies in Informatics in progress, not yet completed.
+              </div>
+            </div>
+
+            <!-- Live clock block -->
+            <div class="live-box">
+              <strong>Current time</strong>
+              <div id="current-time" class="live-value">--:--:--</div>
+            </div>
+
+            <!-- Page session timer block -->
+            <div class="live-box">
+              <strong>Time on page</strong>
+              <div id="time-on-page" class="live-value">00:00:00</div>
             </div>
           </div>
         </div>
@@ -355,66 +101,84 @@
     </div>
   </header>
 
+  <!-- =========================
+       MAIN CONTENT
+  ========================== -->
   <main>
+    <!-- CONTACT -->
     <section class="section" id="contact">
       <div class="container">
         <div class="section-header">
           <h2>Contact</h2>
-          <p>Main contact information and links.</p>
+          <p>Main contact information and professional links.</p>
         </div>
+
         <div class="grid-2">
           <div class="card contact-item">
             <div class="icon">@</div>
             <div>
-              <strong>Email</strong><br>
+              <strong>Email</strong><br />
               <a class="muted" href="mailto:subxv1@gmail.com">subxv1@gmail.com</a>
             </div>
           </div>
+
           <div class="card contact-item">
             <div class="icon">PH</div>
             <div>
-              <strong>Phone</strong><br>
+              <strong>Phone</strong><br />
               <span class="muted">(+420) 608 820 635</span>
             </div>
           </div>
+
           <div class="card contact-item">
             <div class="icon">GH</div>
             <div>
-              <strong>GitHub</strong><br>
-              <a class="muted" href="https://github.com/JinTonikCZ" target="_blank" rel="noreferrer">github.com/JinTonikCZ</a>
+              <strong>GitHub</strong><br />
+              <a class="muted" href="https://github.com/JinTonikCZ" target="_blank" rel="noreferrer">
+                github.com/JinTonikCZ
+              </a>
             </div>
           </div>
+
           <div class="card contact-item">
             <div class="icon">LI</div>
             <div>
-              <strong>LinkedIn</strong><br>
-              <a class="muted" href="https://www.linkedin.com/in/pavel-dikan-7a7b94344/" target="_blank" rel="noreferrer">linkedin.com/in/pavel-dikan-7a7b94344</a>
+              <strong>LinkedIn</strong><br />
+              <a class="muted" href="https://www.linkedin.com/in/pavel-dikan-7a7b94344/" target="_blank" rel="noreferrer">
+                linkedin.com/in/pavel-dikan-7a7b94344
+              </a>
             </div>
           </div>
+
           <div class="card contact-item">
             <div class="icon">TG</div>
             <div>
-              <strong>Telegram</strong><br>
-              <a class="muted" href="https://t.me/programatorr" target="_blank" rel="noreferrer">@programatorr</a>
+              <strong>Telegram</strong><br />
+              <a class="muted" href="https://t.me/programatorr" target="_blank" rel="noreferrer">
+                @programatorr
+              </a>
             </div>
           </div>
+
           <div class="card contact-item">
             <div class="icon">CV</div>
             <div>
-              <strong>Resume PDF</strong><br>
-              <a class="muted" href="./Pavel-Dikan-CV.pdf">Download CV</a>
+              <strong>Resume PDF</strong><br />
+              <a class="muted" href="./Pavel-Dikan-CV.pdf" target="_blank">Open CV</a>
             </div>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- EXPERIENCE -->
     <section class="section" id="experience">
       <div class="container">
         <div class="section-header">
           <h2>Work Experience</h2>
-          <p>Based on the structure of your CV.</p>
+          <p>Professional background based on the current CV.</p>
         </div>
+
         <div class="card stack">
           <div class="entry">
             <div>
@@ -460,12 +224,14 @@
       </div>
     </section>
 
+    <!-- EDUCATION -->
     <section class="section" id="education">
       <div class="container">
         <div class="section-header">
           <h2>Education and Training</h2>
-          <p>Education rewritten to reflect current status correctly.</p>
+          <p>Current education status is described correctly.</p>
         </div>
+
         <div class="card stack">
           <div class="entry">
             <div>
@@ -503,21 +269,63 @@
       </div>
     </section>
 
+    <!-- PROJECTS -->
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section-header">
+          <h2>Selected GitHub Projects</h2>
+          <p>Projects that support the portfolio in analytics, infrastructure, and practical IT work.</p>
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <h3>AŽD Financial Analysis Dashboard</h3>
+            <p class="muted">
+              Management-oriented dashboard project with financial KPIs, plan vs. actual comparison,
+              and variance analysis.
+            </p>
+            <div class="project-actions">
+              <a class="btn" href="https://github.com/JinTonikCZ/azd-financial-analysis-dashboard" target="_blank" rel="noreferrer">
+                Open project on GitHub
+              </a>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>GitHub Profile</h3>
+            <p class="muted">
+              Additional repositories and technical practice projects in Linux, DevOps,
+              web development, and academic work.
+            </p>
+            <div class="project-actions">
+              <a class="btn" href="https://github.com/JinTonikCZ" target="_blank" rel="noreferrer">
+                View all repositories
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LANGUAGES -->
     <section class="section" id="languages">
       <div class="container">
         <div class="section-header">
           <h2>Languages</h2>
           <p>Language levels based on the current CV.</p>
         </div>
+
         <div class="grid-3">
           <div class="card">
             <h3>Russian</h3>
             <div class="muted">Native language</div>
           </div>
+
           <div class="card">
             <h3>Czech</h3>
             <div class="muted">B2</div>
           </div>
+
           <div class="card">
             <h3>English</h3>
             <div class="muted">B1</div>
@@ -526,37 +334,14 @@
       </div>
     </section>
 
-    <section class="section" id="projects">
-      <div class="container">
-        <div class="section-header">
-          <h2>Selected GitHub Projects</h2>
-          <p>Projects that support my portfolio in infrastructure, analytics, and practical IT work.</p>
-        </div>
-        <div class="grid-2">
-          <div class="card">
-            <h3>AŽD Financial Analysis Dashboard</h3>
-            <div class="muted">Management-oriented dashboard project with financial KPIs, plan vs. actual comparison, and variance analysis.</div>
-            <div style="margin-top:0.8rem;">
-              <a class="btn" href="https://github.com/JinTonikCZ/azd-financial-analysis-dashboard" target="_blank" rel="noreferrer">Open project on GitHub</a>
-            </div>
-          </div>
-          <div class="card">
-            <h3>GitHub Profile</h3>
-            <div class="muted">Additional repositories and technical practice projects in Linux, DevOps, web development, and academic work.</div>
-            <div style="margin-top:0.8rem;">
-              <a class="btn" href="https://github.com/JinTonikCZ" target="_blank" rel="noreferrer">View all repositories</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
+    <!-- SKILLS -->
     <section class="section" id="skills">
       <div class="container">
         <div class="section-header">
           <h2>Skills</h2>
           <p>Main technical areas from the resume.</p>
         </div>
+
         <div class="grid-2">
           <div class="card">
             <h3>Technical Skills</h3>
@@ -575,6 +360,7 @@
               <span class="tag">ADSL / FTTB / GPON</span>
             </div>
           </div>
+
           <div class="card">
             <h3>Additional Information</h3>
             <ul class="clean">
@@ -589,8 +375,16 @@
     </section>
   </main>
 
+  <!-- =========================
+       FOOTER
+  ========================== -->
   <footer>
-    <div class="container">© 2026 Pavel Dikan. Resume-based GitHub Pages site.</div>
+    <div class="container">
+      © 2026 Pavel Dikan. Resume-based GitHub Pages site.
+    </div>
   </footer>
+
+  <!-- External JavaScript -->
+  <script src="app.js"></script>
 </body>
 </html>
