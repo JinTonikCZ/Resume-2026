@@ -1,99 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Basic page setup -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <!-- Page title shown in browser tab -->
   <title>Pavel Dikan | Resume 2026</title>
-
-  <!-- External stylesheet -->
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <!-- =========================
-       TOP NAVIGATION
-  ========================== -->
+  <div class="bg-orb bg-orb-1"></div>
+  <div class="bg-orb bg-orb-2"></div>
+
   <nav class="nav">
     <div class="container nav-inner">
       <div class="brand">Pavel Dikan</div>
 
+      <div class="nav-controls">
+        <label class="control-inline" for="language-switcher">
+          <span data-i18n="controls.language">Language</span>
+          <select id="language-switcher" class="select-control">
+            <option value="en">EN</option>
+            <option value="cs">CZ</option>
+            <option value="de">DE</option>
+            <option value="ru">RU</option>
+          </select>
+        </label>
+
+        <button id="theme-toggle" class="theme-toggle" type="button">
+          <span id="theme-toggle-label" data-i18n="controls.themeDark">Dark theme</span>
+        </button>
+      </div>
+
       <div class="nav-links">
-        <a href="#contact">Contact</a>
-        <a href="#experience">Experience</a>
-        <a href="#education">Education</a>
-        <a href="#projects">Projects</a>
-        <a href="#languages">Languages</a>
-        <a href="#skills">Skills</a>
+        <a href="#contact" data-i18n="nav.contact">Contact</a>
+        <a href="#experience" data-i18n="nav.experience">Experience</a>
+        <a href="#education" data-i18n="nav.education">Education</a>
+        <a href="#projects" data-i18n="nav.projects">Projects</a>
+        <a href="#time-section" data-i18n="nav.time">Time</a>
+        <a href="#languages" data-i18n="nav.languages">Languages</a>
+        <a href="#skills" data-i18n="nav.skills">Skills</a>
       </div>
     </div>
   </nav>
 
-  <!-- =========================
-       HERO SECTION
-  ========================== -->
   <header class="hero">
     <div class="container">
-      <div class="hero-card">
+      <div class="hero-card animated-border">
         <div class="hero-top">
-          <!-- Left side: main introduction -->
           <div>
-            <div class="eyebrow">Resume / Portfolio</div>
-
+            <div class="eyebrow" data-i18n="hero.eyebrow">Resume / Portfolio</div>
             <h1>Pavel Dikan</h1>
-
-            <p class="lead">
-              DevOps- and infrastructure-oriented IT specialist with hands-on experience
-              in Linux administration, cloud tooling, monitoring, automation, and practical
-              technical support. Currently studying Informatics in Prague and building
-              portfolio projects in Git, Docker, Kubernetes, dashboards, and documentation.
+            <p class="lead" data-i18n="hero.lead">
+              DevOps- and infrastructure-oriented IT specialist with hands-on experience in Linux administration,
+              cloud tooling, monitoring, automation, and practical technical support. Currently studying Informatics in Prague
+              and building portfolio projects in Git, Docker, Kubernetes, dashboards, and documentation.
             </p>
 
-            <!-- Main action buttons -->
             <div class="actions">
-              <a class="btn primary" href="./Pavel-Dikan-CV.pdf" target="_blank">Download CV</a>
+              <a class="btn primary" href="./Pavel-Dikan-CV.pdf" target="_blank" data-i18n="hero.downloadCv">Download CV</a>
               <a class="btn" href="https://github.com/JinTonikCZ" target="_blank" rel="noreferrer">GitHub</a>
               <a class="btn" href="https://www.linkedin.com/in/pavel-dikan-7a7b94344/" target="_blank" rel="noreferrer">LinkedIn</a>
               <a class="btn" href="https://t.me/programatorr" target="_blank" rel="noreferrer">Telegram</a>
+              <a class="btn youtube-btn" href="https://www.youtube.com/" target="_blank" rel="noreferrer" aria-label="YouTube">
+                <span class="youtube-icon">▶</span>
+                <span>YouTube</span>
+              </a>
             </div>
 
-            <!-- Small info chips -->
             <div class="chips">
-              <span class="chip">Prague, Czech Republic</span>
-              <span class="chip">Open to junior IT / DevOps roles</span>
-              <span class="chip">Master’s studies in progress</span>
+              <span class="chip" data-i18n="hero.chipLocation">Prague, Czech Republic</span>
+              <span class="chip" data-i18n="hero.chipOpen">Open to junior IT / DevOps roles</span>
+              <span class="chip" data-i18n="hero.chipStudies">Master’s studies in progress</span>
             </div>
           </div>
 
-          <!-- Right side: summary and live info -->
           <div class="summary-box">
             <div class="avatar">PD</div>
-
             <div>
-              <strong>Current focus</strong>
-              <div class="muted">
-                Linux, DevOps, Git, Docker, Kubernetes, dashboards, and practical infrastructure work.
-              </div>
+              <strong data-i18n="hero.focusTitle">Current focus</strong>
+              <div class="muted" data-i18n="hero.focusText">Linux, DevOps, Git, Docker, Kubernetes, dashboards, and practical infrastructure work.</div>
             </div>
-
             <div>
-              <strong>Education status</strong>
-              <div class="muted">
-                Master’s studies in Informatics in progress, not yet completed.
-              </div>
-            </div>
-
-            <!-- Live clock block -->
-            <div class="live-box">
-              <strong>Current time</strong>
-              <div id="current-time" class="live-value">--:--:--</div>
-            </div>
-
-            <!-- Page session timer block -->
-            <div class="live-box">
-              <strong>Time on page</strong>
-              <div id="time-on-page" class="live-value">00:00:00</div>
+              <strong data-i18n="hero.educationTitle">Education status</strong>
+              <div class="muted" data-i18n="hero.educationText">Master’s studies in Informatics in progress, not yet completed.</div>
             </div>
           </div>
         </div>
@@ -101,273 +89,130 @@
     </div>
   </header>
 
-  <!-- =========================
-       MAIN CONTENT
-  ========================== -->
   <main>
-    <!-- CONTACT -->
     <section class="section" id="contact">
       <div class="container">
         <div class="section-header">
-          <h2>Contact</h2>
-          <p>Main contact information and professional links.</p>
+          <h2 data-i18n="contact.title">Contact</h2>
+          <p data-i18n="contact.subtitle">Main contact information and professional links.</p>
         </div>
-
         <div class="grid-2">
-          <div class="card contact-item">
-            <div class="icon">@</div>
-            <div>
-              <strong>Email</strong><br />
-              <a class="muted" href="mailto:subxv1@gmail.com">subxv1@gmail.com</a>
-            </div>
-          </div>
-
-          <div class="card contact-item">
-            <div class="icon">PH</div>
-            <div>
-              <strong>Phone</strong><br />
-              <span class="muted">(+420) 608 820 635</span>
-            </div>
-          </div>
-
-          <div class="card contact-item">
-            <div class="icon">GH</div>
-            <div>
-              <strong>GitHub</strong><br />
-              <a class="muted" href="https://github.com/JinTonikCZ" target="_blank" rel="noreferrer">
-                github.com/JinTonikCZ
-              </a>
-            </div>
-          </div>
-
-          <div class="card contact-item">
-            <div class="icon">LI</div>
-            <div>
-              <strong>LinkedIn</strong><br />
-              <a class="muted" href="https://www.linkedin.com/in/pavel-dikan-7a7b94344/" target="_blank" rel="noreferrer">
-                linkedin.com/in/pavel-dikan-7a7b94344
-              </a>
-            </div>
-          </div>
-
-          <div class="card contact-item">
-            <div class="icon">TG</div>
-            <div>
-              <strong>Telegram</strong><br />
-              <a class="muted" href="https://t.me/programatorr" target="_blank" rel="noreferrer">
-                @programatorr
-              </a>
-            </div>
-          </div>
-
-          <div class="card contact-item">
-            <div class="icon">CV</div>
-            <div>
-              <strong>Resume PDF</strong><br />
-              <a class="muted" href="./Pavel-Dikan-CV.pdf" target="_blank">Open CV</a>
-            </div>
-          </div>
+          <div class="card contact-item"><div class="icon">@</div><div><strong data-i18n="contact.email">Email</strong><br /><a class="muted" href="mailto:subxv1@gmail.com">subxv1@gmail.com</a></div></div>
+          <div class="card contact-item"><div class="icon">PH</div><div><strong data-i18n="contact.phone">Phone</strong><br /><span class="muted">(+420) 608 820 635</span></div></div>
+          <div class="card contact-item"><div class="icon">GH</div><div><strong>GitHub</strong><br /><a class="muted" href="https://github.com/JinTonikCZ" target="_blank" rel="noreferrer">github.com/JinTonikCZ</a></div></div>
+          <div class="card contact-item"><div class="icon">LI</div><div><strong>LinkedIn</strong><br /><a class="muted" href="https://www.linkedin.com/in/pavel-dikan-7a7b94344/" target="_blank" rel="noreferrer">linkedin.com/in/pavel-dikan-7a7b94344</a></div></div>
+          <div class="card contact-item"><div class="icon">TG</div><div><strong>Telegram</strong><br /><a class="muted" href="https://t.me/programatorr" target="_blank" rel="noreferrer">@programatorr</a></div></div>
+          <div class="card contact-item"><div class="icon">CV</div><div><strong data-i18n="contact.resume">Resume PDF</strong><br /><a class="muted" href="./Pavel-Dikan-CV.pdf" target="_blank" data-i18n="contact.openCv">Open CV</a></div></div>
         </div>
       </div>
     </section>
 
-    <!-- EXPERIENCE -->
     <section class="section" id="experience">
       <div class="container">
         <div class="section-header">
-          <h2>Work Experience</h2>
-          <p>Professional background based on the current CV.</p>
+          <h2 data-i18n="experience.title">Work Experience</h2>
+          <p data-i18n="experience.subtitle">Professional background based on the current CV.</p>
         </div>
-
         <div class="card stack">
           <div class="entry">
-            <div>
-              <h3>Junior Linux Admin</h3>
-              <div class="meta">Cloudinfrastack • Prague, Czech Republic • 11/2024 – 02/2025</div>
-            </div>
+            <div><h3 data-i18n="experience.job1.title">Junior Linux Admin</h3><div class="meta" data-i18n="experience.job1.meta">Cloudinfrastack • Prague, Czech Republic • 11/2024 – 02/2025</div></div>
             <ul class="clean">
-              <li>Linux Ubuntu administration (v22, v24).</li>
-              <li>OpenStack cloud software administration.</li>
-              <li>Monitoring of cloud infrastructure with Sensu Uchiwa.</li>
-              <li>Automation with Puppet and Ansible.</li>
-              <li>Work with Docker, Kubernetes, Jenkins, GitLab, Heat, Foreman, and Consul.</li>
-            </ul>
-          </div>
-
-          <div class="entry">
-            <div>
-              <h3>Software Engineer</h3>
-              <div class="meta">Yugra-ASU • Nizhnevartovsk, Russia • 11/2020 – 09/2021</div>
-            </div>
-            <ul class="clean">
-              <li>Maintenance and programming of industrial control units and PLC systems.</li>
-              <li>Administration of enterprise IT infrastructure in Windows and Astra Linux.</li>
-              <li>Microsoft SQL Server database administration.</li>
-              <li>Repair and support of telecommunication networks: ADSL, FTTB, GPON.</li>
-            </ul>
-          </div>
-
-          <div class="entry">
-            <div>
-              <h3>Network Technician</h3>
-              <div class="meta">NVGU Nizhnevartovsk State University • Nizhnevartovsk, Russia • 08/2019 – 11/2020</div>
-            </div>
-            <ul class="clean">
-              <li>Maintenance of the university computer network.</li>
-              <li>Support of practical classes for telecommunication equipment repair.</li>
-              <li>Work with virtual machines in VirtualBox.</li>
-              <li>User security policies in Active Directory.</li>
-              <li>PC replacement, repair, and operating system cloning.</li>
+              <li data-i18n="experience.job1.li1">Linux Ubuntu administration (v22, v24).</li>
+              <li data-i18n="experience.job1.li2">OpenStack cloud software administration.</li>
+              <li data-i18n="experience.job1.li3">Monitoring of cloud infrastructure with Sensu Uchiwa.</li>
+              <li data-i18n="experience.job1.li4">Automation with Puppet and Ansible.</li>
+              <li data-i18n="experience.job1.li5">Work with Docker, Kubernetes, Jenkins, GitLab, Heat, Foreman, and Consul.</li>
             </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- EDUCATION -->
     <section class="section" id="education">
       <div class="container">
         <div class="section-header">
-          <h2>Education and Training</h2>
-          <p>Current education status is described correctly.</p>
+          <h2 data-i18n="education.title">Education and Training</h2>
+          <p data-i18n="education.subtitle">Current education status is described correctly.</p>
         </div>
-
         <div class="card stack">
           <div class="entry">
-            <div>
-              <h3>Informatics</h3>
-              <div class="meta">Czech University of Life Sciences Prague (ČZU) • Prague, Czech Republic • 10/2024 – 06/2026</div>
-            </div>
+            <div><h3 data-i18n="education.current.title">Informatics</h3><div class="meta" data-i18n="education.current.meta">Czech University of Life Sciences Prague (ČZU) • Prague, Czech Republic • 10/2024 – 06/2026</div></div>
             <ul class="clean">
-              <li>Master’s studies in progress.</li>
-              <li>This degree is not completed yet.</li>
-              <li>Current focus: ArgoCD, Kubernetes, Git, Power BI, IBM SPSS Modeler, NotebookLM.</li>
-            </ul>
-          </div>
-
-          <div class="entry">
-            <div>
-              <h3>Bachelor’s Degree in Software Engineering and Technology</h3>
-              <div class="meta">NVGU Nizhnevartovsk State University • Nizhnevartovsk, Russia • 09/2016 – 07/2020</div>
-            </div>
-            <ul class="clean">
-              <li>Programming in Java, PHP, Linux, Python, and work with VirtualBox.</li>
-              <li>Final thesis: website for the cosmetic studio “Zlat-Art”.</li>
-            </ul>
-          </div>
-
-          <div class="entry">
-            <div>
-              <h3>Technician–Programmer</h3>
-              <div class="meta">Nizhnevartovsk Social and Humanitarian College • Nizhnevartovsk, Russia • 11/2011 – 06/2015</div>
-            </div>
-            <ul class="clean">
-              <li>Information applications in .NET using C#.</li>
+              <li data-i18n="education.current.li1">Master’s studies in progress.</li>
+              <li data-i18n="education.current.li2">This degree is not completed yet.</li>
+              <li data-i18n="education.current.li3">Current focus: ArgoCD, Kubernetes, Git, Power BI, IBM SPSS Modeler, NotebookLM.</li>
             </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- PROJECTS -->
     <section class="section" id="projects">
       <div class="container">
         <div class="section-header">
-          <h2>Selected GitHub Projects</h2>
-          <p>Projects that support the portfolio in analytics, infrastructure, and practical IT work.</p>
+          <h2 data-i18n="projects.title">Selected GitHub Projects</h2>
+          <p data-i18n="projects.subtitle">Projects that support the portfolio in analytics, infrastructure, and practical IT work.</p>
         </div>
-
         <div class="grid-2">
-          <div class="card">
-            <h3>AŽD Financial Analysis Dashboard</h3>
-            <p class="muted">
-              Management-oriented dashboard project with financial KPIs, plan vs. actual comparison,
-              and variance analysis.
-            </p>
-            <div class="project-actions">
-              <a class="btn" href="https://github.com/JinTonikCZ/azd-financial-analysis-dashboard" target="_blank" rel="noreferrer">
-                Open project on GitHub
-              </a>
-            </div>
-          </div>
+          <div class="card"><h3 data-i18n="projects.azd.title">AŽD Financial Analysis Dashboard</h3><p class="muted" data-i18n="projects.azd.text">Management-oriented dashboard project with financial KPIs, plan vs. actual comparison, and variance analysis.</p><div class="project-actions"><a class="btn" href="https://github.com/JinTonikCZ/azd-financial-analysis-dashboard" target="_blank" rel="noreferrer" data-i18n="projects.azd.button">Open project on GitHub</a></div></div>
+          <div class="card"><h3 data-i18n="projects.profile.title">GitHub Profile</h3><p class="muted" data-i18n="projects.profile.text">Additional repositories and technical practice projects in Linux, DevOps, web development, and academic work.</p><div class="project-actions"><a class="btn" href="https://github.com/JinTonikCZ" target="_blank" rel="noreferrer" data-i18n="projects.profile.button">View all repositories</a></div></div>
+        </div>
+      </div>
+    </section>
 
-          <div class="card">
-            <h3>GitHub Profile</h3>
-            <p class="muted">
-              Additional repositories and technical practice projects in Linux, DevOps,
-              web development, and academic work.
-            </p>
-            <div class="project-actions">
-              <a class="btn" href="https://github.com/JinTonikCZ" target="_blank" rel="noreferrer">
-                View all repositories
-              </a>
-            </div>
+    <section class="section" id="time-section">
+      <div class="container">
+        <div class="section-header">
+          <h2 data-i18n="time.title">Time</h2>
+          <p data-i18n="time.subtitle">Local Prague time and page session timer.</p>
+        </div>
+        <div class="grid-2">
+          <div class="card time-card">
+            <h3 data-i18n="time.pragueTitle">Current time in Prague</h3>
+            <div id="current-time" class="time-value">--:--:--</div>
+          </div>
+          <div class="card time-card">
+            <h3 data-i18n="time.sessionTitle">Time spent on this page</h3>
+            <div id="time-on-page" class="time-value">00:00:00</div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- LANGUAGES -->
     <section class="section" id="languages">
       <div class="container">
         <div class="section-header">
-          <h2>Languages</h2>
-          <p>Language levels based on the current CV.</p>
+          <h2 data-i18n="languages.title">Languages</h2>
+          <p data-i18n="languages.subtitle">Language levels based on the current CV.</p>
         </div>
-
         <div class="grid-3">
-          <div class="card">
-            <h3>Russian</h3>
-            <div class="muted">Native language</div>
-          </div>
-
-          <div class="card">
-            <h3>Czech</h3>
-            <div class="muted">B2</div>
-          </div>
-
-          <div class="card">
-            <h3>English</h3>
-            <div class="muted">B1</div>
-          </div>
+          <div class="card"><h3 data-i18n="languages.russian">Russian</h3><div class="muted" data-i18n="languages.russianLevel">Native language</div></div>
+          <div class="card"><h3 data-i18n="languages.czech">Czech</h3><div class="muted">B2</div></div>
+          <div class="card"><h3 data-i18n="languages.english">English</h3><div class="muted">B1</div></div>
         </div>
       </div>
     </section>
 
-    <!-- SKILLS -->
     <section class="section" id="skills">
       <div class="container">
         <div class="section-header">
-          <h2>Skills</h2>
-          <p>Main technical areas from the resume.</p>
+          <h2 data-i18n="skills.title">Skills</h2>
+          <p data-i18n="skills.subtitle">Main technical areas from the resume.</p>
         </div>
-
         <div class="grid-2">
           <div class="card">
-            <h3>Technical Skills</h3>
+            <h3 data-i18n="skills.techTitle">Technical Skills</h3>
             <div class="tags">
-              <span class="tag">DevOps</span>
-              <span class="tag">ArgoCD</span>
-              <span class="tag">Kubernetes</span>
-              <span class="tag">Git</span>
-              <span class="tag">Linux Bash/Shell</span>
-              <span class="tag">Docker</span>
-              <span class="tag">PHP</span>
-              <span class="tag">Power BI</span>
-              <span class="tag">IBM SPSS Modeler</span>
-              <span class="tag">Active Directory</span>
-              <span class="tag">VirtualBox</span>
-              <span class="tag">ADSL / FTTB / GPON</span>
+              <span class="tag">DevOps</span><span class="tag">ArgoCD</span><span class="tag">Kubernetes</span><span class="tag">Git</span><span class="tag">Linux Bash/Shell</span><span class="tag">Docker</span><span class="tag">PHP</span><span class="tag">Power BI</span><span class="tag">IBM SPSS Modeler</span><span class="tag">Active Directory</span><span class="tag">VirtualBox</span><span class="tag">ADSL / FTTB / GPON</span>
             </div>
           </div>
-
           <div class="card">
-            <h3>Additional Information</h3>
+            <h3 data-i18n="skills.additionalTitle">Additional Information</h3>
             <ul class="clean">
-              <li>Ability to design computer networks.</li>
-              <li>Practical work with Git and GitHub.</li>
-              <li>Interest in infrastructure, monitoring, and cloud tooling.</li>
-              <li>Driving licence: category B.</li>
+              <li data-i18n="skills.li1">Ability to design computer networks.</li>
+              <li data-i18n="skills.li2">Practical work with Git and GitHub.</li>
+              <li data-i18n="skills.li3">Interest in infrastructure, monitoring, and cloud tooling.</li>
+              <li data-i18n="skills.li4">Driving licence: category B.</li>
             </ul>
           </div>
         </div>
@@ -375,16 +220,10 @@
     </section>
   </main>
 
-  <!-- =========================
-       FOOTER
-  ========================== -->
   <footer>
-    <div class="container">
-      © 2026 Pavel Dikan. Resume-based GitHub Pages site.
-    </div>
+    <div class="container">© 2026 Pavel Dikan. Resume-based GitHub Pages site.</div>
   </footer>
 
-  <!-- External JavaScript -->
   <script src="app.js"></script>
 </body>
 </html>
