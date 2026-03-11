@@ -2,8 +2,8 @@
    Resume website interactive logic
 
    Features:
-   1. Prague local time
-   2. Time spent on page
+   1. Prague local time in top bar
+   2. Time spent on page in top bar
    3. Language switcher (EN / CZ / DE / RU)
    4. Theme switcher (dark / light)
 ========================================= */
@@ -12,9 +12,9 @@
    DOM ELEMENT REFERENCES
 ----------------------------------------- */
 const navCurrentTimeElement = document.getElementById("nav-current-time");
+const navTimeOnPageElement = document.getElementById("nav-time-on-page");
 const languageSwitcher = document.getElementById("language-switcher");
 const themeToggle = document.getElementById("theme-toggle");
-const themeToggleLabel = document.getElementById("theme-toggle-label");
 const themeToggleLabel = document.getElementById("theme-toggle-label");
 
 /* -----------------------------------------
@@ -24,18 +24,18 @@ const pageOpenTimestamp = Date.now();
 
 /* -----------------------------------------
    TRANSLATIONS
-   Text dictionary for interface switching
 ----------------------------------------- */
 const translations = {
   en: {
     "controls.language": "Language",
     "controls.themeDark": "Dark theme",
     "controls.themeLight": "Light theme",
+    "controls.prague": "Prague",
+    "controls.session": "On page",
     "nav.contact": "Contact",
     "nav.experience": "Experience",
     "nav.education": "Education",
     "nav.projects": "Projects",
-    "nav.time": "Time",
     "nav.languages": "Languages",
     "nav.skills": "Skills",
     "hero.eyebrow": "Resume / Portfolio",
@@ -78,10 +78,6 @@ const translations = {
     "projects.profile.title": "GitHub Profile",
     "projects.profile.text": "Additional repositories and technical practice projects in Linux, DevOps, web development, and academic work.",
     "projects.profile.button": "View all repositories",
-    "time.title": "Time",
-    "time.subtitle": "Local Prague time and page session timer.",
-    "time.pragueTitle": "Current time in Prague",
-    "time.sessionTitle": "Time spent on this page",
     "languages.title": "Languages",
     "languages.subtitle": "Language levels based on the current CV.",
     "languages.russian": "Russian",
@@ -97,16 +93,16 @@ const translations = {
     "skills.li3": "Interest in infrastructure, monitoring, and cloud tooling.",
     "skills.li4": "Driving licence: category B."
   },
-
   cs: {
     "controls.language": "Jazyk",
     "controls.themeDark": "Tmavé téma",
     "controls.themeLight": "Světlé téma",
+    "controls.prague": "Praha",
+    "controls.session": "Na stránce",
     "nav.contact": "Kontakt",
     "nav.experience": "Praxe",
     "nav.education": "Vzdělání",
     "nav.projects": "Projekty",
-    "nav.time": "Čas",
     "nav.languages": "Jazyky",
     "nav.skills": "Dovednosti",
     "hero.eyebrow": "Životopis / Portfolio",
@@ -149,10 +145,6 @@ const translations = {
     "projects.profile.title": "GitHub profil",
     "projects.profile.text": "Další repozitáře a technické projekty z oblasti Linuxu, DevOps, webového vývoje a akademické práce.",
     "projects.profile.button": "Zobrazit všechny repozitáře",
-    "time.title": "Čas",
-    "time.subtitle": "Místní čas v Praze a čas strávený na této stránce.",
-    "time.pragueTitle": "Aktuální čas v Praze",
-    "time.sessionTitle": "Čas strávený na této stránce",
     "languages.title": "Jazyky",
     "languages.subtitle": "Jazykové úrovně podle aktuálního CV.",
     "languages.russian": "Ruština",
@@ -168,16 +160,16 @@ const translations = {
     "skills.li3": "Zájem o infrastrukturu, monitoring a cloudové nástroje.",
     "skills.li4": "Řidičský průkaz skupiny B."
   },
-
   de: {
     "controls.language": "Sprache",
     "controls.themeDark": "Dunkles Thema",
     "controls.themeLight": "Helles Thema",
+    "controls.prague": "Prag",
+    "controls.session": "Auf Seite",
     "nav.contact": "Kontakt",
     "nav.experience": "Erfahrung",
     "nav.education": "Ausbildung",
     "nav.projects": "Projekte",
-    "nav.time": "Zeit",
     "nav.languages": "Sprachen",
     "nav.skills": "Kenntnisse",
     "hero.eyebrow": "Lebenslauf / Portfolio",
@@ -220,10 +212,6 @@ const translations = {
     "projects.profile.title": "GitHub-Profil",
     "projects.profile.text": "Weitere Repositories und technische Praxisprojekte in Linux, DevOps, Webentwicklung und akademischer Arbeit.",
     "projects.profile.button": "Alle Repositories anzeigen",
-    "time.title": "Zeit",
-    "time.subtitle": "Ortszeit in Prag und Sitzungsdauer auf dieser Seite.",
-    "time.pragueTitle": "Aktuelle Uhrzeit in Prag",
-    "time.sessionTitle": "Zeit auf dieser Seite",
     "languages.title": "Sprachen",
     "languages.subtitle": "Sprachniveaus laut aktuellem CV.",
     "languages.russian": "Russisch",
@@ -239,16 +227,16 @@ const translations = {
     "skills.li3": "Interesse an Infrastruktur, Monitoring und Cloud-Tools.",
     "skills.li4": "Führerschein der Klasse B."
   },
-
   ru: {
     "controls.language": "Язык",
     "controls.themeDark": "Тёмная тема",
     "controls.themeLight": "Светлая тема",
+    "controls.prague": "Прага",
+    "controls.session": "На странице",
     "nav.contact": "Контакты",
     "nav.experience": "Опыт",
     "nav.education": "Образование",
     "nav.projects": "Проекты",
-    "nav.time": "Время",
     "nav.languages": "Языки",
     "nav.skills": "Навыки",
     "hero.eyebrow": "Резюме / Портфолио",
@@ -291,10 +279,6 @@ const translations = {
     "projects.profile.title": "GitHub профиль",
     "projects.profile.text": "Другие репозитории и практические технические проекты по Linux, DevOps, web-разработке и учебной работе.",
     "projects.profile.button": "Посмотреть все репозитории",
-    "time.title": "Время",
-    "time.subtitle": "Местное время в Праге и таймер пребывания на странице.",
-    "time.pragueTitle": "Текущее время в Праге",
-    "time.sessionTitle": "Время на этой странице",
     "languages.title": "Языки",
     "languages.subtitle": "Уровни языков по текущему CV.",
     "languages.russian": "Русский",
@@ -312,19 +296,12 @@ const translations = {
   }
 };
 
-/* -----------------------------------------
-   HELPERS
------------------------------------------ */
 function padToTwoDigits(value) {
   return String(value).padStart(2, "0");
 }
 
-/* -----------------------------------------
-   PRAGUE CLOCK
------------------------------------------ */
 function updatePragueTime() {
   const now = new Date();
-
   const formatter = new Intl.DateTimeFormat("en-GB", {
     timeZone: "Europe/Prague",
     hour: "2-digit",
@@ -333,14 +310,11 @@ function updatePragueTime() {
     hour12: false
   });
 
- if (navCurrentTimeElement) {
+  if (navCurrentTimeElement) {
     navCurrentTimeElement.textContent = formatter.format(now);
   }
 }
 
-/* -----------------------------------------
-   PAGE TIMER
------------------------------------------ */
 function updateTimeOnPage() {
   const nowTimestamp = Date.now();
   const diffMilliseconds = nowTimestamp - pageOpenTimestamp;
@@ -350,16 +324,26 @@ function updateTimeOnPage() {
   const minutes = Math.floor((totalSeconds % 3600) / 60);
   const seconds = totalSeconds % 60;
 
-  timeOnPageElement.textContent =
-    `${padToTwoDigits(hours)}:${padToTwoDigits(minutes)}:${padToTwoDigits(seconds)}`;
+  if (navTimeOnPageElement) {
+    navTimeOnPageElement.textContent =
+      `${padToTwoDigits(hours)}:${padToTwoDigits(minutes)}:${padToTwoDigits(seconds)}`;
+  }
 }
 
-/* -----------------------------------------
-   LANGUAGE SWITCHING
------------------------------------------ */
+function updateThemeButtonLabel() {
+  if (!themeToggleLabel || !languageSwitcher) return;
+
+  const currentLang = languageSwitcher.value || "en";
+  const dictionary = translations[currentLang] || translations.en;
+  const isLight = document.body.classList.contains("light-theme");
+
+  themeToggleLabel.textContent = isLight
+    ? dictionary["controls.themeLight"]
+    : dictionary["controls.themeDark"];
+}
+
 function applyLanguage(lang) {
   const dictionary = translations[lang] || translations.en;
-
   document.documentElement.lang = lang;
 
   document.querySelectorAll("[data-i18n]").forEach((element) => {
@@ -373,19 +357,6 @@ function applyLanguage(lang) {
   localStorage.setItem("site-language", lang);
 }
 
-/* -----------------------------------------
-   THEME SWITCHING
------------------------------------------ */
-function updateThemeButtonLabel() {
-  const currentLang = languageSwitcher.value || "en";
-  const dictionary = translations[currentLang] || translations.en;
-
-  const isLight = document.body.classList.contains("light-theme");
-  themeToggleLabel.textContent = isLight
-    ? dictionary["controls.themeLight"]
-    : dictionary["controls.themeDark"];
-}
-
 function applyTheme(themeName) {
   if (themeName === "light") {
     document.body.classList.add("light-theme");
@@ -397,34 +368,31 @@ function applyTheme(themeName) {
   localStorage.setItem("site-theme", themeName);
 }
 
-/* -----------------------------------------
-   EVENT LISTENERS
------------------------------------------ */
-languageSwitcher.addEventListener("change", (event) => {
-  applyLanguage(event.target.value);
-});
+if (languageSwitcher) {
+  languageSwitcher.addEventListener("change", (event) => {
+    applyLanguage(event.target.value);
+  });
+}
 
-themeToggle.addEventListener("click", () => {
-  const isLight = document.body.classList.contains("light-theme");
-  applyTheme(isLight ? "dark" : "light");
-});
+if (themeToggle) {
+  themeToggle.addEventListener("click", () => {
+    const isLight = document.body.classList.contains("light-theme");
+    applyTheme(isLight ? "dark" : "light");
+  });
+}
 
-/* -----------------------------------------
-   INITIAL STATE
------------------------------------------ */
 const savedLanguage = localStorage.getItem("site-language") || "en";
 const savedTheme = localStorage.getItem("site-theme") || "dark";
 
-languageSwitcher.value = savedLanguage;
+if (languageSwitcher) {
+  languageSwitcher.value = savedLanguage;
+}
+
 applyLanguage(savedLanguage);
 applyTheme(savedTheme);
-
 updatePragueTime();
 updateTimeOnPage();
 
-/* -----------------------------------------
-   REFRESH TIMERS EVERY SECOND
------------------------------------------ */
 setInterval(() => {
   updatePragueTime();
   updateTimeOnPage();
