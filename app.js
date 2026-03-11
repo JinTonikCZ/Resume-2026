@@ -11,10 +11,10 @@
 /* -----------------------------------------
    DOM ELEMENT REFERENCES
 ----------------------------------------- */
-const currentTimeElement = document.getElementById("current-time");
-const timeOnPageElement = document.getElementById("time-on-page");
+const navCurrentTimeElement = document.getElementById("nav-current-time");
 const languageSwitcher = document.getElementById("language-switcher");
 const themeToggle = document.getElementById("theme-toggle");
+const themeToggleLabel = document.getElementById("theme-toggle-label");
 const themeToggleLabel = document.getElementById("theme-toggle-label");
 
 /* -----------------------------------------
@@ -333,7 +333,9 @@ function updatePragueTime() {
     hour12: false
   });
 
-  currentTimeElement.textContent = formatter.format(now);
+ if (navCurrentTimeElement) {
+    navCurrentTimeElement.textContent = formatter.format(now);
+  }
 }
 
 /* -----------------------------------------
