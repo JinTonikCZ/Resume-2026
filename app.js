@@ -84,7 +84,13 @@ const translations = {
     "projects.profile.title": "GitHub Profile",
     "projects.profile.text": "Additional repositories and technical practice projects in Linux, DevOps, web development, and academic work.",
     "projects.profile.button": "View all repositories",
+"projects.teamcity.title": "TeamCity Cloud Remote Shell Executor",
+"projects.teamcity.text": "Kotlin and Spring Boot backend service that dynamically provisions Kubernetes Pods to execute remote shell commands, simulating CI/CD autoscaling workflows.",
+"projects.teamcity.button": "Open project on GitHub",
 
+"projects.resume.title": "Resume Website",
+"projects.resume.text": "Personal portfolio website built with HTML, CSS, and JavaScript, including language switching, theme switching, Prague time, and GitHub Pages deployment.",
+"projects.resume.button": "Open project on GitHub",
     "languages.title": "Languages",
     "languages.subtitle": "Language levels based on the current CV.",
     "languages.russian": "Russian",
@@ -160,7 +166,15 @@ const translations = {
     "projects.profile.title": "GitHub profil",
     "projects.profile.text": "Další repozitáře a technické projekty z oblasti Linuxu, DevOps, webového vývoje a akademické práce.",
     "projects.profile.button": "Zobrazit všechny repozitáře",
+     
+"projects.teamcity.title": "TeamCity Cloud Remote Shell Executor",
+"projects.teamcity.text": "Backendová služba v Kotlinu a Spring Bootu, která dynamicky vytváří Kubernetes Pody pro spouštění vzdálených shell příkazů a simuluje CI/CD autoscaling workflow.",
+"projects.teamcity.button": "Otevřít projekt na GitHubu",
 
+"projects.resume.title": "Web životopisu",
+"projects.resume.text": "Osobní portfolio web vytvořený v HTML, CSS a JavaScriptu, včetně přepínání jazyků, tématu, času v Praze a nasazení přes GitHub Pages.",
+"projects.resume.button": "Otevřít projekt na GitHubu",
+     
     "languages.title": "Jazyky",
     "languages.subtitle": "Jazykové úrovně podle aktuálního CV.",
     "languages.russian": "Ruština",
@@ -236,7 +250,13 @@ const translations = {
     "projects.profile.title": "GitHub-Profil",
     "projects.profile.text": "Weitere Repositories und technische Praxisprojekte in Linux, DevOps, Webentwicklung und akademischer Arbeit.",
     "projects.profile.button": "Alle Repositories anzeigen",
+"projects.teamcity.title": "TeamCity Cloud Remote Shell Executor",
+"projects.teamcity.text": "Backend-Service in Kotlin und Spring Boot, der dynamisch Kubernetes-Pods bereitstellt, um Remote-Shell-Befehle auszuführen und CI/CD-Autoscaling-Workflows zu simulieren.",
+"projects.teamcity.button": "Projekt auf GitHub öffnen",
 
+"projects.resume.title": "Lebenslauf-Website",
+"projects.resume.text": "Persönliche Portfolio-Website mit HTML, CSS und JavaScript, einschließlich Sprachumschaltung, Theme-Wechsel, Prager Zeit und GitHub-Pages-Bereitstellung.",
+"projects.resume.button": "Projekt auf GitHub öffnen",
     "languages.title": "Sprachen",
     "languages.subtitle": "Sprachniveaus laut aktuellem CV.",
     "languages.russian": "Russisch",
@@ -312,6 +332,13 @@ const translations = {
     "projects.profile.title": "GitHub профиль",
     "projects.profile.text": "Другие репозитории и практические технические проекты по Linux, DevOps, web-разработке и учебной работе.",
     "projects.profile.button": "Посмотреть все репозитории",
+     "projects.teamcity.title": "TeamCity Cloud Remote Shell Executor",
+"projects.teamcity.text": "Backend-сервис на Kotlin и Spring Boot, который динамически поднимает Kubernetes Pods для выполнения удалённых shell-команд и имитирует CI/CD autoscaling workflow.",
+"projects.teamcity.button": "Открыть проект на GitHub",
+
+"projects.resume.title": "Сайт-резюме",
+"projects.resume.text": "Персональный portfolio website на HTML, CSS и JavaScript с переключением языков, темы, временем по Праге и деплоем через GitHub Pages.",
+"projects.resume.button": "Открыть проект на GitHub",
 
     "languages.title": "Языки",
     "languages.subtitle": "Уровни языков по текущему CV.",
