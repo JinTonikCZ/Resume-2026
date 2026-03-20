@@ -509,3 +509,10 @@ footer {
   color: var(--accent);
   letter-spacing: 0.04em;
 }
+.project-actions {
+  margin-top: 1rem;
+}
+
+.card h3 {
+  margin-top: 0;
+}
