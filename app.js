@@ -123,7 +123,7 @@ const translations = {
     "nav.skills": "Dovednosti",
 
     "hero.eyebrow": "Životopis / Portfolio",
-    "hero.lead": "IT specialista zaměřený na DevOps a infrastrukturu s praktickými zkušenostmi v oblasti správy Linuxu, cloudových nástrojů, monitoringu, automatizace a technické podpory. Aktuálně studuji informatiku v Praze a buduju portfolio projektů v oblasti Gitu, Dockeru, Kubernetes, dashboardů a dokumentace.",
+    "hero.lead": "IT specialista zaměřený na DevOps a infrastrukturu s praktickými zkušenostmi v oblasti správy Linuxu, cloudových nástrojů, monitoringu, automatizace a technické podpory. Aktuálně studuji informatiku v Praze a rozšiřuji své portfolio projektů v oblasti Gitu, Dockeru, Kubernetes, dashboardů a technické dokumentace.",
     "hero.downloadCv": "Stáhnout CV",
     "hero.chipLocation": "Praha, Česká republika",
     "hero.chipOpen": "Otevřen  IT Develop / DevOps rolím",
