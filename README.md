@@ -34,14 +34,3 @@ In addition, the page includes interactive JavaScript features:
 - Clean card-based layout
 - GitHub Pages friendly structure
 
-## Project Structure
-
-Resume-2026/
-├── index.html
-├── styles.css
-├── app.js
-├── Pavel-Dikan-CV.pdf
-├── README.md
-└── diagrams/
-    ├── structure.puml
-    └── page-flow.puml
